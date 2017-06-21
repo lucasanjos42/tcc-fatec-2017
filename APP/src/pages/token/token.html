@@ -1,0 +1,73 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title> Token </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h3 class="align-middle"> Teia Token </h3>
+
+  <br />
+
+  <div *ngIf="!tokenActive">
+
+    <h4 class="align-middle">Gere agora seu token para comprar com segurança!</h4>
+
+    <img style="width: 50%" class="img" src="assets/lock-flat.png">
+
+    <br />
+
+    <button (click)="generateToken()" ion-button color="secondary" block>
+        <ion-icon class="padding-icon" name="lock"></ion-icon> Gerar Token </button>
+
+    <br />
+
+    <h4 class="align-middle"> Atenção: Após o token ser gerado, ele será expirado em 30 segundos.</h4>
+
+  </div>
+
+  <div *ngIf="tokenActive">
+
+    <h4 class="align-middle"> Seu token é: </h4>
+    <br />
+    <h2 class="align-middle">{{token}}</h2>
+
+    <br />
+
+    <ion-card *ngIf="timer">
+      <ion-item class="no-bottom-border item">
+        <button ion-button *ngIf="timeInSeconds && timeInSeconds > 0" large full clear class="timer-button timer-text">{{timer.displayTime}}</button>
+      </ion-item>
+    </ion-card>
+
+    <br />
+
+    <div *ngIf="hasFinished()">
+
+      <h4 class="align-middle">Seu Token não está mais ativo!</h4>
+
+      <button (click)="refreshToken()" ion-button block> Gerar outro token! </button>
+
+    </div>
+
+  </div>
+
+  <style>
+    .timer-button {
+      font-size: 5rem !important;
+      height: 1em !important;
+    }
+
+    .no-bottom-border.item .item-inner {
+      border-bottom: none !important;
+    }
+
+  </style>
+
+
+
+</ion-content>

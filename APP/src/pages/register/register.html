@@ -1,0 +1,121 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-title> Cadastro </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <h2> Cadastre-se agora! </h2>
+
+  <br />
+
+  <form [formGroup]="register">
+    <ion-list>
+      <ion-list-header>INFORMAÇÕES PESSOAIS</ion-list-header>
+      <ion-item>
+        <ion-label floating>Nome </ion-label>
+        <ion-input type="text" formControlName="name"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Sobrenome</ion-label>
+        <ion-input type="text" formControlName="surname"></ion-input>
+      </ion-item>
+      <br />
+      <ion-item>
+        <ion-label>Sexo</ion-label>
+        <ion-select formControlName="gender">
+          <ion-option value="masculino"> Masculino </ion-option>
+          <ion-option value="feminino"> Feminino </ion-option>
+        </ion-select>
+      </ion-item>
+      <br />
+      <ion-item>
+        <ion-label>Data de Nascimento</ion-label>
+        <ion-datetime displayFormat="YYYY-MM-DD" max="1999" min="1900" formControlName="birthDate"></ion-datetime>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>CPF</ion-label>
+        <ion-input type="text" formControlName="cpf"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>RG</ion-label>
+        <ion-input type="text" formControlName="rg"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Celular</ion-label>
+        <ion-input type="tel" formControlName="phoneNumber"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <br />
+    
+    <ion-list>
+      <ion-list-header>ENDEREÇO</ion-list-header>
+      <ion-item>
+        <ion-label floating>Endereço</ion-label>
+        <ion-input type="text" formControlName="address"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Cidade</ion-label>
+        <ion-input type="text" formControlName="city"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Bairro</ion-label>
+        <ion-input type="text" formControlName="province"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>CEP</ion-label>
+        <ion-input type="text" formControlName="cep"></ion-input>
+      </ion-item>
+    </ion-list>
+
+    <br />
+
+    <ion-list>
+      <ion-list-header>ACESSO</ion-list-header>
+      <ion-item>
+        <ion-label floating>E-mail</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label floating>Senha</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+    </ion-list>  
+
+    <br />
+
+    <ion-list> 
+      <ion-list-header>DADOS DO CARTÃO</ion-list-header> 
+      <ion-item>
+            <ion-label floating>Número do cartão</ion-label>
+            <ion-input type="tel" formControlName="cardNumber"></ion-input>
+        </ion-item>
+        <br />
+        <ion-item>
+            <ion-label>Tipo do cartão</ion-label>
+            <ion-select formControlName="type">
+                <ion-option value="debito">Débito</ion-option>
+                <ion-option value="credito">Crédito</ion-option>
+            </ion-select>
+        </ion-item>
+        <br />
+        <ion-item>
+            <ion-label>Data de validade</ion-label>
+            <ion-datetime displayFormat="MM-YYYY" formControlName="expirationDate" max="2025"></ion-datetime>
+        </ion-item>
+        <ion-item>
+            <ion-label floating>Código de Segurança</ion-label>
+            <ion-input type="tel" formControlName="cvv"></ion-input>
+        </ion-item>
+    </ion-list>  
+    <br />
+
+    <button ion-button [disabled]="!register.valid" color="secondary" (click)="postData()" block> Cadastrar </button>
+
+  </form>
+</ion-content>
