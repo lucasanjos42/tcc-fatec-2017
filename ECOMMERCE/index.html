@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br" ng-app="app">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- modules -->
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="scripts/angular-locale_pt-br.js"></script>
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/ng-lodash.min.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/ngstorage/ngStorage.min.js"></script>
+    <script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="node_modules/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="node_modules/angular-loading-bar/src/loading-bar.js"></script>
+    
+
+
+    <!-- app/controllers/services -->
+
+    <script src="ui/app/app.js"></script>
+    <script src="ui/app/config.js"></script>
+    <script src="ui/app/global-factory.js"></script>
+    <script src="ui/app/directives/header-directive.js"></script>
+    <script src="ui/app/home/home-controller.js"></script>
+    <script src="ui/app/home/home-service.js"></script>
+    <script src="ui/app/listProducts/listProducts-controller.js"></script>
+    <script src="ui/app/listProducts/listProducts-service.js"></script>
+    <script src="ui/app/product/product-controller.js"></script>
+    <script src="ui/app/product/product-service.js"></script>
+    <script src="ui/app/cart/cart-controller.js"></script>
+    <script src="ui/app/cart/cart-service.js"></script>
+    <script src="ui/app/login/login-controller.js"></script>
+    <script src="ui/app/login/login-service.js"></script>
+    <script src="ui/app/register/register-controller.js"></script>
+    <script src="ui/app/register/register-service.js"></script>
+
+    <!-- css -->
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="ui/css/home.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="node_modules/angular-toastr/dist/angular-toastr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="node_modules/sweetalert/dist/sweetalert.css">
+    <link href="node_modules/angular-loading-bar/src/loading-bar.css" rel="stylesheet" />
+
+    <title>Teia Store</title>
+
+</head>
+
+<body>
+    <ng-view>
+
+    </ng-view>
+</body>
+
+</html>

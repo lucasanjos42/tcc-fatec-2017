@@ -1,0 +1,87 @@
+<header-directive></header-directive>
+<link href="ui/css/cart.css" rel="stylesheet" type="text/css" media="all" />
+
+<h1 class="page-header">Meu Carrinho</h1>
+
+<div ng-show="vm.items.length <= 0">
+    <br />
+    <center>
+        <h1>Você ainda não adicionou nada ao carrinho :/</h1>
+    </center>
+</div>
+
+<div ng-show="vm.items.length > 0">
+
+    <div class="row table-responsive">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Marca</th>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Total</th>
+                    <th>Remover</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in vm.items">
+                    <td>{{$index + 1}}</td>
+                    <td>{{ item.brand }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.price | currency }}</td>
+                    <td> {{ item.quantityPay }}
+                        <buttton ng-click="vm.addItem(item);" style="margin-left: 20px" class="btn btn-primary btn-xs">+</buttton>
+                        <buttton ng-click="vm.removeItem(item);" style="margin-left: 20px" class="btn btn-danger btn-xs">-</buttton>
+                    </td>
+                    <td>{{ item.price * item.quantityPay | currency }}</td>
+                    <th>
+                        <buttton ng-click="vm.excludeItem(item);" style="margin-left: 20px" class="btn btn-danger btn-xs">X</buttton>
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="valor">
+        <h4>Subtotal: <span style="font-weight:normal;">{{vm.subtotalPay | currency}}</span>
+        <hr align="center" width="99%" size="0" color="grey">
+        Frete: <span style="font-weight:normal;">{{vm.freightPay | currency}}</span>
+        <hr align="center" width="99%" size="1" color="grey">
+        Total a Pagar: <span style="font-weight:normal;">{{vm.totalPay | currency}}</span>
+      </h4>
+    </div>
+
+    <div id="frete">
+        <form name="freteForm">
+            <font size="5">Código Teia Store</font>
+            <hr align="center" width="99%" size="1" color="grey">
+            <div class="input-append">
+                <input ng-model="vm.insertedCode" ng-disabled="vm.code == 'accepted'" placeholder="Insira aqui seu código" class="span2" id="appendedInputButton" type="text">
+                <button ng-disabled="!vm.insertedCode || vm.code == 'accepted'" ng-click="vm.checkCode();" class="btn btn-primary btn-sm">Verificar</button>
+
+                <div ng-show="vm.code == 'accepted'">
+                    <h4 style="color: green">Código Validado!</h4>
+                </div>
+
+                <div ng-show="vm.code == 'rejected'">
+                    <h4 style="color: red">Código Inválido!</h4>
+                </div>
+
+                <div ng-show="vm.code == 'null'">
+                    <br />
+                    <br />
+                </div>
+            </div>
+            <br />
+        </form>
+    </div>
+
+    <br />
+
+    <div id="Finalizar">
+        <input type="button" ng-click="vm.buy();" ng-disabled="vm.code !== 'accepted'" class="btn btn-success" value="Finalizar" />
+    </div>
+
+</div>

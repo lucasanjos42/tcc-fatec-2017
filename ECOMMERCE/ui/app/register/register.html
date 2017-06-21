@@ -1,0 +1,38 @@
+<div>
+    <div class="signup-main">
+        <div class="signup-head">
+            <h1>Registrar</h1>
+        </div>
+        <div class="signup-block">
+            <form>
+
+                <input ng-model="vm.user.name" type="text" placeholder="Name">
+
+                <input ng-model="vm.user.surname" type="text" placeholder="Sobrenome">
+
+                <input ng-model="vm.user.email" type="text" placeholder="Email">
+
+                <input ng-model="vm.user.password" type="password" placeholder="Password">
+
+                <div class="forgot-top-grids">
+                    <div class="clearfix"></div>
+                </div>
+
+                <input ng-click="vm.register();" type="submit" name="Sign In" value="Registrar">
+
+            </form>
+            <div class="sign-down">
+                <h4>Já tem uma conta? <a style="color: #337ab7" href="#/login"> Entre aqui!</a></h4>
+                <h5><a href="index.html">Voltar para a Tela Inicial</a></h5>
+            </div>
+        </div>
+    </div>
+</div>
+<br />
+<div class="copyrights">
+    <p>Copyright © Teia Store 2016 </p>
+</div>
+<link href="ui/css/login.css" rel="stylesheet" type="text/css" media="all" />
+<link href="ui/css/font-awesome.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Carrois+Gothic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet" type="text/css">

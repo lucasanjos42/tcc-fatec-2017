@@ -1,0 +1,23 @@
+{
+  "name": "tcc-api",
+  "version": "1.0.0",
+  "description": "API do projeto de TCC",
+  "main": "www/server.js",
+  "repository": "https://gitlab.com/tcc-teia-store/tcc-api.git",
+  "scripts": {
+    "start": "node ./www/server"
+  },
+  "author": "Lucas Anjos",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.8.1",
+    "express": "^4.14.0",
+    "jsonwebtoken": "^7.1.9",
+    "lodash": "^4.17.4",
+    "moment": "^2.14.1",
+    "mongoose": "^4.6.0",
+    "node-cron": "^1.1.3",
+    "sendgrid": "^4.7.1"
+  }
+}

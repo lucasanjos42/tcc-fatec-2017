@@ -1,0 +1,21 @@
+{
+  "name": "ecommerce",
+  "version": "1.0.0",
+  "description": "Site - E-commerce",
+  "main": "index.js",
+  "repository": "https://gitlab.com/tcc-teia-store/ECOMMERCE.git",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Lucas Anjos",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "1.5.0",
+    "angular-loading-bar": "^0.9.0",
+    "angular-route": "1.5.0",
+    "angular-toastr": "^2.1.1",
+    "bootstrap": "^3.3.7",
+    "ngstorage": "^0.3.11",
+    "sweetalert": "^1.1.3"
+  }
+}

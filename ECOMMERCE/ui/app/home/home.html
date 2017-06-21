@@ -1,0 +1,101 @@
+<header-directive></header-directive>
+
+<!-- Page Content -->
+<div class="container-fluid caroussel-container">
+
+	<div class="col-md-12">
+		<div class="row">
+
+			<div id = "myCarousel" class="carousel slide" data-ride="carousel">
+
+				<ol class = "carousel-indicators">
+					<li data-target = "#myCarousel" data-slide-to = "0" class = "active"></li>
+					<li data-target = "#myCarousel" data-slide-to = "1"></li>
+					<li data-target = "#myCarousel" data-slide-to = "2"></li>
+				</ol>
+				<div class = "carousel-inner">
+					<div class = "item active">
+					<a ng-click="setCategory('console')" href="#/listProducts">
+						<img class="slide-image" src="ui/images/consoles.png" alt="">
+					</a>					
+					</div>
+					<div class = "item ">
+					<a ng-click="setCategory('notebook')" href="#/listProducts">
+						<img class="slide-image" src="ui/images/notebooks.png" alt="">
+					</a>
+					</div>
+					<div class = "item">
+					<a ng-click="setCategory('cellphone')" href="#/listProducts">
+						<img class="slide-image" src="ui/images/smartphones.png" alt="">
+					</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+
+
+<div class="container-fluid tomato">
+
+        <div class="col-md-8 col-md-offset-2">
+
+
+
+            <div class="row">
+
+
+								<div class="col-md-12">
+									<h2 class="section-title">Últimas Novidades:</h2>
+									<hr class="home-divider">
+								</div>
+
+
+
+
+                <div ng-repeat="product in vm.products | orderBy: 'date' | limitTo: '3'" ng-class="{'last-product-section': $last}">
+
+                    <div class="col-md-4 product-box">
+                        <div class="thumbnail">
+                            <!-- <img src="ui/images/product-test.jpg" alt=""> -->
+                            <img class="img-responsive" ng-src="{{product.picture}}" />
+                            <div class="caption">
+																<h4 class="product-name">{{product.name}}</a>
+
+                                <h4 class="product-price">{{product.price | currency}}</h4>
+
+                                </h4>
+                                <p class="product-description">{{product.shortDescription}}</p>
+                            </div>
+                        </div>
+												<a ng-click="vm.selectProduct(product)" class="btn btn-primary buy-button">Comprar</a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+<!--
+    </div>
+-->
+</div>
+<!-- /.container -->
+
+<div class="container">
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Teia Store 2017</p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<!-- /.container -->

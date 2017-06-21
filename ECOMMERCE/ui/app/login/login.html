@@ -1,0 +1,38 @@
+<div>
+    <div class="login-main">
+        <div class="login-head">
+            <h1>Login</h1>
+        </div>
+        <div class="login-block">
+            <form>
+
+                <input ng-model="vm.user.email" type="text" placeholder="E-mail">
+
+                <input ng-model="vm.user.password" type="password" placeholder="Senha">
+
+                <!--<div class="forgot-top-grids">
+                    <div class="forgot">
+                        <a href="#/login">Esqueceu a senha?</a>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>-->
+
+                <input ng-click="vm.login();" type="submit" value="Login">
+
+                <h3>Não é registrado? Faça seu cadastro pelo nosso APP!</h3>
+
+            </form>
+            <br>
+            <h5><a href="#/">Voltar para tela Inicial</a></h5>
+        </div>
+    </div>
+</div>
+<br />
+<div class="copyrights">
+    <p>Copyright © Teia Store 2016 </p>
+</div>
+<link href="ui/css/login.css" rel="stylesheet" type="text/css" media="all" />
+<link href="ui/css/font-awesome.css" rel="stylesheet">
+<link href="//fonts.googleapis.com/css?family=Carrois+Gothic" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Work+Sans:400,500,600" rel="stylesheet" type="text/css">
+<!-- mother grid end here-->

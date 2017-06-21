@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <!-- modules -->
+
+    <script src="node_modules/angular/angular.js"></script>
+    <script src="scripts/angular-locale_pt-br.js"></script>
+    <script src="node_modules/angular-route/angular-route.js"></script>
+    <script src="scripts/jquery.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="node_modules/ngstorage/ngStorage.min.js"></script>
+    <script src="node_modules/angular-toastr/dist/angular-toastr.tpls.js"></script>
+    <script src="scripts/ngImgCrop/ng-img-crop.js"></script>
+    <script src="node_modules/angular-loading-bar/build/loading-bar.js"></script>
+
+
+    <!-- app/controllers/services -->
+
+    <script src="ui/app/app.js"></script>
+    <script src="ui/app/config.js"></script>
+    <script src="ui/app/global-factory.js"></script>
+    <script src="ui/app/directives/header-directive.js"></script>
+    <script src="ui/app/directives/sideBar-directive.js"></script>
+    <script src="ui/app/login/login-controller.js"></script>
+    <script src="ui/app/login/login-service.js"></script>
+    <script src="ui/app/dashboard/dashboard-controller.js"></script>
+    <script src="ui/app/dashboard/dashboard-service.js"></script>
+    <script src="ui/app/users/users-controller.js"></script>
+    <script src="ui/app/users/users-service.js"></script>
+    <script src="ui/app/products/products-controller.js"></script>
+    <script src="ui/app/products/products-service.js"></script>
+    <script src="ui/app/suppliers/suppliers-controller.js"></script>
+    <script src="ui/app/suppliers/suppliers-service.js"></script>
+
+
+    <!-- css -->
+
+    <link href="node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="ui/css/dashboard.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="node_modules/angular-toastr/dist/angular-toastr.min.css" rel="stylesheet" />
+    <link href="scripts/ngImgCrop/ng-img-crop.css" rel="stylesheet" />
+    <link href="node_modules/angular-loading-bar/build/loading-bar.css" rel="stylesheet" />
+
+
+    <title> Teia Store - Admin </title>
+
+</head>
+
+<body>
+    <ng-view>
+
+    </ng-view>
+</body>
+
+</html>

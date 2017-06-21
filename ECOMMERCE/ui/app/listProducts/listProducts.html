@@ -1,0 +1,63 @@
+<header-directive></header-directive>
+
+<!-- Page Content -->
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-12">
+
+		<br>
+		<br>
+		<br>
+		<br>
+            <div class="row">
+                <h2 class="col-sm-4 col-lg-4 col-md-4">Categoria - {{vm.showCategory}}</h2>
+            </div>
+
+            <div class="row">
+                <center>
+                    Buscar:
+                    <input style="width: 300px" ng-model="vm.search.name" type="text" class="input-md" />
+                </center>
+            </div>
+            <br />
+
+            <div class="row">
+
+                <div ng-repeat="product in vm.products | filter: vm.category | filter:vm.search:strict | orderBy: 'name'">
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <!-- <img src="ui/images/product-test.jpg" alt=""> -->
+                            <img style="max-width: 320px;max-height: 150px;" ng-src="{{product.picture}}" />
+                            <div class="caption">
+                                <h4 class="pull-right">{{product.price | currency}}</h4>
+                                <h4><a ng-click="vm.selectProduct(product)">{{product.name}}</a>
+                                </h4>
+                                <p>{{product.shortDescription}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container -->
+
+<div class="container">
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Teia Store 2017</p>
+            </div>
+        </div>
+    </footer>
+
+</div>
+<!-- /.container -->

@@ -1,0 +1,19 @@
+body {
+    margin: 20px;
+    padding: 20px;
+}
+#frete {
+    padding: 20px;
+    border: 1px solid #000000;
+    float: right;
+    width: 49%;
+}
+#valor {
+    padding: 20px;
+    border: 1px solid #000000;
+    float: left;
+    width: 49%;
+}
+#Finalizar {
+    margin-top: 200px;
+}

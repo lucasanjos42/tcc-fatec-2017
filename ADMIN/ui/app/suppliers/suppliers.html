@@ -1,0 +1,288 @@
+<header-directive></header-directive>
+
+<div class="container-fluid">
+
+    <sidebar-directive></sidebar-directive>
+
+    <div class="row" ng-show="vm.showList">
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Fornecedores</h1>
+
+            <row>
+                <div>
+                    <button ng-click="vm.goToNewSupplier();" type="button" class="btn btn-primary "> Novo </button>
+                </div>
+            </row>
+
+            <br />
+
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Razao Social</th>
+                            <th>Nome Fantasia</th>
+                            <th>CNPJ</th>
+                            <th>Telefone</th>
+                            <th>E-mail</th>
+                            <th>Website</th>
+                            <th>Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="supplier in vm.suppliers">
+                            <td>{{$index + 1}}</td>
+                            <td>{{supplier.name}}</td>
+                            <td>{{supplier.fantasyName}}</td>
+                            <td>{{supplier.cnpj}}</td>
+                            <td>{{supplier.phoneNumber}}</td>
+                            <td>{{supplier.email}}</td>
+                            <td>{{supplier.website}}</td>
+                            <td>
+                                <button ng-click="vm.edit(supplier)" type="button" class="btn btn-primary btn-sm">
+                                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span> Editar
+                                </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - TELA DE EDICAO DE FORNECEDOR - - - - - - - - - - - - - -  -->
+
+    <div class="row" ng-show="vm.showEdit">
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Fornecedor{{vm.suppplier.fantasyName}}</h1>
+
+            <br />
+            <br />
+
+            <center>
+
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Razão Social</label>
+                    <div class="col-md-4">
+                        <input ng-model="vm.supplier.name" type="text" class="form-control input-md">
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Nome</label>
+                    <div class="col-md-4">
+                        <input ng-model="vm.supplier.fantasyName" type="text" class="form-control input-md">
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="form-group">
+                    <label class="col-md-3 control-label">CNPJ</label>
+                    <div class="col-md-4">
+                        <input ng-model="vm.supplier.cnpj" type="text" class="form-control input-md">
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Telefone</label>
+                    <div class="col-md-4">
+                        <input ng-model="vm.supplier.phoneNumber" type="text" class="form-control input-md">
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="form-group">
+                    <label class="col-md-3 control-label">E-mail</label>
+                    <div class="col-md-4">
+                        <input ng-model="vm.supplier.email" type="text" class="form-control input-md">
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Website</label>
+                    <div class="col-md-4">
+                        <input ng-model="vm.supplier.website" type="text" class="form-control input-md">
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="form-group">
+                    <label class="col-md-3 control-label">CEP</label>
+                    <div class="col-md-4">
+                        <input ng-model="vm.supplier.cep" type="text" class="form-control input-md">
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Rua</label>
+                    <div class="col-md-4">
+                        <input ng-model="vm.supplier.address" type="text" class="form-control input-md">
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="form-group">
+                    <label class="col-md-3 control-label">UF</label>
+                    <div class="col-md-4">
+                        <input ng-model="vm.supplier.province" type="text" class="form-control input-md">
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Cidade</label>
+                    <div class="col-md-4">
+                        <input ng-model="vm.supplier.city" type="text" class="form-control input-md">
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+                <div class="form-group">
+                    <label class="col-md-3 control-label">Membro desde</label>
+                    <div class="col-md-4">
+                        <input ng-model="vm.supplier.memberSince" type="text" class="form-control input-md" disabled>
+                    </div>
+                </div>
+                <br />
+                <br />
+                <br />
+
+                <button ng-click="vm.goToList();" type="button" class="btn btn-primary" style="margin-right: 20px;"> Voltar </button>
+                <button ng-click="vm.removeSupplier();" type="button" class="btn btn-danger" style="margin-right: 20px;"> Excluir </button>
+                <button ng-click="vm.updateSupplier();" type="button" class="btn btn-success"> Salvar </button>
+
+            </center>
+
+        </div>
+    </div>
+
+    <!-- - - - - - - - - - - - - - - - TELA DE NOVO FORNECEDOR - - - - - - - - - - - - - -  -->
+
+    <div class="row" ng-show="vm.showNewSupplier">
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <h1 class="page-header">Novo Fornecedor</h1>
+
+            <br />
+            <br />
+
+            <center>
+
+              <div class="form-group">
+                  <label class="col-md-3 control-label">Razão Social</label>
+                  <div class="col-md-4">
+                      <input ng-model="vm.supplier.name" type="text" class="form-control input-md">
+                  </div>
+              </div>
+              <br />
+              <br />
+              <br />
+              <div class="form-group">
+                  <label class="col-md-3 control-label">Nome</label>
+                  <div class="col-md-4">
+                      <input ng-model="vm.supplier.fantasyName" type="text" class="form-control input-md">
+                  </div>
+              </div>
+              <br />
+              <br />
+              <br />
+              <div class="form-group">
+                  <label class="col-md-3 control-label">CNPJ</label>
+                  <div class="col-md-4">
+                      <input ng-model="vm.supplier.cnpj" type="text" class="form-control input-md">
+                  </div>
+              </div>
+              <br />
+              <br />
+              <br />
+              <div class="form-group">
+                  <label class="col-md-3 control-label">Telefone</label>
+                  <div class="col-md-4">
+                      <input ng-model="vm.supplier.phoneNumber" type="text" class="form-control input-md">
+                  </div>
+              </div>
+              <br />
+              <br />
+              <br />
+              <div class="form-group">
+                  <label class="col-md-3 control-label">E-mail</label>
+                  <div class="col-md-4">
+                      <input ng-model="vm.supplier.email" type="text" class="form-control input-md">
+                  </div>
+              </div>
+              <br />
+              <br />
+              <br />
+              <div class="form-group">
+                  <label class="col-md-3 control-label">Website</label>
+                  <div class="col-md-4">
+                      <input ng-model="vm.supplier.website" type="text" class="form-control input-md">
+                  </div>
+              </div>
+              <br />
+              <br />
+              <br />
+              <div class="form-group">
+                  <label class="col-md-3 control-label">CEP</label>
+                  <div class="col-md-4">
+                      <input ng-model="vm.supplier.cep" type="text" class="form-control input-md">
+                  </div>
+              </div>
+              <br />
+              <br />
+              <br />
+              <div class="form-group">
+                  <label class="col-md-3 control-label">Rua</label>
+                  <div class="col-md-4">
+                      <input ng-model="vm.supplier.address" type="text" class="form-control input-md">
+                  </div>
+              </div>
+              <br />
+              <br />
+              <br />
+              <div class="form-group">
+                  <label class="col-md-3 control-label">UF</label>
+                  <div class="col-md-4">
+                      <input ng-model="vm.supplier.province" type="text" class="form-control input-md">
+                  </div>
+              </div>
+              <br />
+              <br />
+              <br />
+              <div class="form-group">
+                  <label class="col-md-3 control-label">Cidade</label>
+                  <div class="col-md-4">
+                      <input ng-model="vm.supplier.city" type="text" class="form-control input-md">
+                  </div>
+              </div>
+              <br />
+              <br />
+              <br />
+
+              <button ng-click="vm.goToList();" type="button" class="btn btn-primary" style="margin-right: 20px;"> Voltar </button>
+              <button ng-click="vm.createNewSupplier();" type="button" class="btn btn-success"> Salvar </button>
+
+            </center>
+
+        </div>
+    </div>
+
+
+</div>

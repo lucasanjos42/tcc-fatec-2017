@@ -1,0 +1,64 @@
+<header-directive></header-directive>
+<link href="ui/css/detailedProduct.css" rel="stylesheet" type="text/css" media="all" />
+
+<div class="container-fluid">
+    <div class="content-wrapper">
+        <div class="item-container">
+            <div class="container">
+                <div class="col-md-6">
+                    <div class="col-md-3 service-image-left">
+                        <center>
+                            <!-- <img id="item-display" src="ui/images/product-test.jpg" alt=""> -->
+                            <img style="max-width: 500px;max-height: 300px;" ng-src="{{vm.product.picture}}" />
+                        </center>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <div class="product-title">{{vm.product.name}}</div>
+                    <div class="product-desc">{{vm.product.shortDescription}}</div>
+                    <div class="product-rating"></div>
+                    <hr>
+                    <div class="product-price">{{vm.product.price | currency}}</div>
+                    <div class="product-stock">Em estoque</div>
+                    <hr>
+                    <div class="btn-group cart">
+                        <button ng-click="vm.addCart();" type="button" class="btn btn-success">
+                            Adicionar ao Carrinho
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+            <div class="col-md-12 product-info">
+                <ul id="myTab" class="nav nav-tabs nav_tabs">
+
+                    <li class="active"><a>Descrição</a></li>
+
+                </ul>
+                <div id="myTabContent" class="tab-content">
+                    <div class="tab-pane fade in active" id="service-one">
+
+                        <section class="container product-info">
+                            {{vm.product.description}}
+                        </section>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <hr>
+    <footer>
+        <div class="row">
+            <div class="col-lg-12">
+                <p>Copyright &copy; Teia Store 2016</p>
+            </div>
+        </div>
+    </footer>
+</div>
